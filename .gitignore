@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+
+*.user
+*.suo
+*.DotSettings.user
+
+**/project.assets.json
+**/project.nuget.cache
+**/project.packagespec.json
