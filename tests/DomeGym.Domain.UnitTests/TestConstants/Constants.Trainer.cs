@@ -6,5 +6,4 @@ public static partial class Constants
     {
         public static readonly Guid Id = Guid.NewGuid();
     }
-    
 }

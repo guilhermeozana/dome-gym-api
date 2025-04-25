@@ -1,57 +1,69 @@
+using ErrorOr;
+
 namespace DomeGym.Domain;
 
 public class Session
 {
-    private readonly Guid _id;
     private readonly Guid _trainerId;
     private readonly List<Guid> _participantIds = new();
-    private readonly DateOnly _date;
-    private readonly TimeOnly _startTime;
-    private readonly TimeOnly _endTime;
     private readonly int _maxParticipants;
+
+    public Guid Id { get; }
+
+    public DateOnly Date { get; }
+
+    public TimeRange Time { get; }
 
     public Session(
         DateOnly date,
-        TimeOnly startTime,
-        TimeOnly endTime,
+        TimeRange time,
         int maxParticipants,
         Guid trainerId,
         Guid? id = null)
     {
-        _date = date;
-        _startTime = startTime;
-        _endTime = endTime;
+        Date = date;
+        Time = time;
         _maxParticipants = maxParticipants;
         _trainerId = trainerId;
-        _id = id ?? Guid.NewGuid();
+        Id = id ?? Guid.NewGuid();
     }
 
-    public void ReserveSpot(Participant participant)
-    {
-        if (_participantIds.Count >= _maxParticipants)
-        {
-            throw new Exception("Cannot have more reservations than max participants");
-        }
-        _participantIds.Add(participant.Id);
-    }
-
-    public void CancelReservation(Participant participant, IDateTimeProvider dateTimeProvider)
+    public ErrorOr<Success> CancelReservation(Participant participant, IDateTimeProvider dateTimeProvider)
     {
         if (IsTooCloseToSession(dateTimeProvider.UtcNow))
         {
-            throw new Exception("Cannot cancel reservation because time is too close to a session");
+            return SessionErrors.CannotCancelReservationTooCloseToSession;
         }
 
         if (!_participantIds.Remove(participant.Id))
         {
-            throw new Exception("Reservation not found");
+            return Error.NotFound(description: "Participant not found");
         }
+
+        return Result.Success;
     }
 
     private bool IsTooCloseToSession(DateTime utcNow)
     {
         const int MinHours = 24;
 
-        return (_date.ToDateTime(_startTime) - utcNow).TotalHours < MinHours;
+        return (Date.ToDateTime(Time.Start) - utcNow).TotalHours < MinHours;
+    }
+
+    public ErrorOr<Success> ReserveSpot(Participant participant)
+    {
+        if (_participantIds.Count >= _maxParticipants)
+        {
+            return SessionErrors.CannotHaveMoreReservationsThanParticipants;
+        }
+
+        if (_participantIds.Contains(participant.Id))
+        {
+            return Error.Conflict(description: "Participants cannot reserve twice to the same session");
+        }
+
+        _participantIds.Add(participant.Id);
+
+        return Result.Success;
     }
 }
