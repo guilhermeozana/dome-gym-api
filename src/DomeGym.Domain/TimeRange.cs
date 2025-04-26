@@ -1,9 +1,10 @@
+using DomeGym.Domain.Common;
 using ErrorOr;
 using Throw;
 
 namespace DomeGym.Domain;
 
-public class TimeRange
+public class TimeRange : ValueObject
 {
     public TimeOnly Start { get; init; }
     public TimeOnly End { get; init; }
@@ -30,5 +31,11 @@ public class TimeRange
         if (other.Start >= End) return false;
 
         return true;
+    }
+
+    public override IEnumerable<object?> GetEqualityComponents()
+    {
+        yield return Start;
+        yield return End;
     }
 }
