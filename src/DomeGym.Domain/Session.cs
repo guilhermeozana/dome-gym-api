@@ -4,8 +4,8 @@ namespace DomeGym.Domain;
 
 public class Session
 {
-    private readonly Guid _trainerId;
-    private readonly List<Guid> _participantIds = new();
+    private readonly Guid _trainerId; 
+    private readonly List<Reservation> _reservations = new();
     private readonly int _maxParticipants;
 
     public Guid Id { get; }
@@ -34,11 +34,15 @@ public class Session
         {
             return SessionErrors.CannotCancelReservationTooCloseToSession;
         }
+        
+        var reservation = _reservations.FirstOrDefault(reservation => reservation.ParticipantId == participant.Id);
 
-        if (!_participantIds.Remove(participant.Id))
+        if (reservation == null)
         {
-            return Error.NotFound(description: "Participant not found");
+            return Error.NotFound("The reservation was not found.");
         }
+
+        _reservations.Remove(reservation);
 
         return Result.Success;
     }
@@ -52,17 +56,18 @@ public class Session
 
     public ErrorOr<Success> ReserveSpot(Participant participant)
     {
-        if (_participantIds.Count >= _maxParticipants)
+        if (_reservations.Count >= _maxParticipants)
         {
             return SessionErrors.CannotHaveMoreReservationsThanParticipants;
         }
 
-        if (_participantIds.Contains(participant.Id))
+        if (_reservations.Any(reservation => reservation.ParticipantId == participant.Id))
         {
             return Error.Conflict(description: "Participants cannot reserve twice to the same session");
         }
 
-        _participantIds.Add(participant.Id);
+        var reservation = new Reservation(participant.Id);
+        _reservations.Add(reservation);
 
         return Result.Success;
     }
