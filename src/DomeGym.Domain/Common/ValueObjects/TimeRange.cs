@@ -16,9 +16,14 @@ public class TimeRange : ValueObject
 
     public static ErrorOr<TimeRange> FromDateTimes(DateTime start, DateTime end)
     {
-        if (start.Date != end.Date || start >= end)
+        if (start.Date != end.Date)
         {
-            return Error.Validation();
+            return Error.Validation(description: "Start date and end date must be the same");
+        }
+
+        if (start >= end)
+        {
+            return Error.Validation(description: "Start date must be before end");
         }
 
         return new TimeRange(TimeOnly.FromDateTime(start), TimeOnly.FromDateTime(end));
