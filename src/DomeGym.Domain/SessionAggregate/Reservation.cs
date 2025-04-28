@@ -1,6 +1,6 @@
 using DomeGym.Domain.Common;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.SessionAggregate;
 
 public class Reservation : Entity
 {

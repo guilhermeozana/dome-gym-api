@@ -1,3 +1,4 @@
+using DomeGym.Domain.RoomAggregate;
 using DomeGym.Domain.UnitTests.TestUtils.Common;
 using DomeGym.Domain.UnitTests.TestUtils.Rooms;
 using DomeGym.Domain.UnitTests.TestUtils.Sessions;

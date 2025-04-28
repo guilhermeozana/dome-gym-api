@@ -1,26 +1,26 @@
+using DomeGym.Domain.Common;
+using DomeGym.Domain.Common.Entities;
+using DomeGym.Domain.SessionAggregate;
 using ErrorOr;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.RoomAggregate;
 
-public class Room
+public class Room : AggregateRoot
 {
     private readonly List<Guid> _sessionIds = new();
     private readonly int _maxDailySessions;
     private readonly Guid _gymId;
     private readonly Schedule _schedule = Schedule.Empty();
 
-    public Guid Id { get; }
-
     public Room(
         int maxDailySessions,
         Guid gymId,
         Schedule? schedule = null,
-        Guid? id = null)
+        Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         _maxDailySessions = maxDailySessions;
         _gymId = gymId;
         _schedule = schedule ?? Schedule.Empty();
-        Id = id ?? Guid.NewGuid();
     }
 
     public ErrorOr<Success> ScheduleSession(Session session)

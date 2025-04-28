@@ -1,3 +1,5 @@
+using DomeGym.Domain.GymAggregate;
+
 namespace DomeGym.Domain.UnitTests.TestUtils.Gyms;
 
 public static class GymFactory

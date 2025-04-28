@@ -1,6 +1,6 @@
 using Ardalis.SmartEnum;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.SubscriptionAggregate;
 
 public class SubscriptionType : SmartEnum<SubscriptionType>
 {

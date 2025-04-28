@@ -1,3 +1,5 @@
+using DomeGym.Domain.Common.Interfaces;
+
 namespace DomeGym.Domain.UnitTests.TestUtils.Services;
 
 public class TestDateTimeProvider : IDateTimeProvider

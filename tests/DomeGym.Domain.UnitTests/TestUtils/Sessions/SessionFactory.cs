@@ -1,3 +1,6 @@
+using DomeGym.Domain.Common.ValueObjects;
+using DomeGym.Domain.SessionAggregate;
+
 namespace DomeGym.Domain.UnitTests.TestUtils.Sessions;
 
 public static class SessionFactory

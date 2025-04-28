@@ -1,3 +1,5 @@
+using DomeGym.Domain.ParticipantAggregate;
+
 namespace DomeGym.Domain.UnitTests.TestUtils.Participants;
 
 public static class ParticipantFactory
