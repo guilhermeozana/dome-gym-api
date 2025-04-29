@@ -6,6 +6,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Domain.UnitTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Application", "src\DomeGym.Application\DomeGym.Application.csproj", "{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Contracts", "src\DomeGym.Contracts\DomeGym.Contracts.csproj", "{30F3C2E5-E50A-49C8-A47C-FA1C2313E5E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Api", "src\DomeGym.Api\DomeGym.Api.csproj", "{96457699-77AF-43A4-849F-420F39962CF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Infrastructure", "src\DomeGym.Infrastructure\DomeGym.Infrastructure.csproj", "{AD7C3A48-BB3F-4847-8D61-D342062CA45F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +30,17 @@ Global
 		{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F3C2E5-E50A-49C8-A47C-FA1C2313E5E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F3C2E5-E50A-49C8-A47C-FA1C2313E5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F3C2E5-E50A-49C8-A47C-FA1C2313E5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F3C2E5-E50A-49C8-A47C-FA1C2313E5E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96457699-77AF-43A4-849F-420F39962CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96457699-77AF-43A4-849F-420F39962CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96457699-77AF-43A4-849F-420F39962CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96457699-77AF-43A4-849F-420F39962CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD7C3A48-BB3F-4847-8D61-D342062CA45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7C3A48-BB3F-4847-8D61-D342062CA45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7C3A48-BB3F-4847-8D61-D342062CA45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7C3A48-BB3F-4847-8D61-D342062CA45F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

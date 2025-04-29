@@ -1,0 +1,25 @@
+### Admin
+POST {{host}}/users/{{userId}}/profiles
+Content-Type: application/json
+
+{
+    "ProfileType": "Admin"
+}
+
+###
+
+### Trainer
+POST {{host}}/users/{{userId}}/profiles
+Content-Type: application/json
+
+{
+    "ProfileType": "Trainer"
+}
+
+### Participant
+POST {{host}}/users/{{userId}}/profiles
+Content-Type: application/json
+
+{
+    "ProfileType": "Participant"
+}

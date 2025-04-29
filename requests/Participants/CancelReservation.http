@@ -1,0 +1,1 @@
+DELETE {{host}}/participants/{{participantId}}/sessions/{{sessionId}}/reservation
