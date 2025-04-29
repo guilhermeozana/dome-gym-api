@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Domain", "src\DomeG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Domain.UnitTests", "tests\DomeGym.Domain.UnitTests\DomeGym.Domain.UnitTests.csproj", "{28A1314C-1AD3-4119-98D0-4C2EEE1A5EEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Application", "src\DomeGym.Application\DomeGym.Application.csproj", "{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{28A1314C-1AD3-4119-98D0-4C2EEE1A5EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28A1314C-1AD3-4119-98D0-4C2EEE1A5EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28A1314C-1AD3-4119-98D0-4C2EEE1A5EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ECB956C-4A9F-4ABB-9D53-236FBFB8F038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
