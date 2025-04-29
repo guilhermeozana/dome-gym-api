@@ -10,4 +10,12 @@
       <ProjectReference Include="..\DomeGym.Domain\DomeGym.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Trainers\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="mediatr" Version="12.5.0" />
+    </ItemGroup>
+
 </Project>
