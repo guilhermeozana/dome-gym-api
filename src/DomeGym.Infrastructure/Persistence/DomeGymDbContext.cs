@@ -48,7 +48,10 @@ public class DomeGymDbContext : DbContext
 
         var result = await base.SaveChangesAsync(cancellationToken);
 
-        Queue<IDomainEvent> domainEventsQueue = _httpContextAccessor.HttpContext.Items.TryGetValue(EventualConsistencyMiddleware.DomainEventsKey, out var value) &&
+        Queue<IDomainEvent> domainEventsQueue = _httpContextAccessor.HttpContext.Items
+            .TryGetValue(
+                EventualConsistencyMiddleware.DomainEventsKey, 
+                out var value) &&
             value is Queue<IDomainEvent> existingDomainEvents
                 ? existingDomainEvents
                 : new();

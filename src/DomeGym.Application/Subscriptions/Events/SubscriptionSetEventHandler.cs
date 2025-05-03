@@ -5,7 +5,7 @@ using MediatR;
 
 namespace DomeGym.Application.Subscriptions.Events;
 
-public class SubscriptionSetEventHandler : INotificationHandler<SubscriptionSetEvent>
+public class  SubscriptionSetEventHandler : INotificationHandler<SubscriptionSetEvent>
 {
     private readonly ISubscriptionsRepository _subscriptionsRepository;
 
