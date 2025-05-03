@@ -1,1 +1,0 @@
-DELETE {{host}}/gyms/{{gymId}}/rooms/{{roomId2}}

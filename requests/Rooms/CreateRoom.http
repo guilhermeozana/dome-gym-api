@@ -1,6 +1,0 @@
-POST {{host}}/gyms/{{gymId}}/rooms
-Content-Type: application/json
-
-{
-    "Name": "Amiko's room 3"
-}

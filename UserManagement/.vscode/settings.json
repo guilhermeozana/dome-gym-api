@@ -1,0 +1,14 @@
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "userId": "c3c10399-0179-40b3-86d9-015fb30fc0a9",
+            "adminId": "",
+            "participantId": "",
+            "trainerId": "47bfb050-de67-44e9-9b3d-78d0489624d7"
+        },
+        "dev": {
+            "host": "http://localhost:5208",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTGlvciIsImVtYWlsIjoibGlvckBkYWdhbi5jb20iLCJpZCI6ImMzYzEwMzk5LTAxNzktNDBiMy04NmQ5LTAxNWZiMzBmYzBhOSIsImV4cCI6MTY5MTU5NTExNiwiaXNzIjoiVXNlck1hbmFnZW1lbnQiLCJhdWQiOiJEb21lR3ltIn0.ktaavfkYW8BU-in9b9gpNpXR6YpzowNyBmqnL7GpU-o"
+        }
+    }
+}

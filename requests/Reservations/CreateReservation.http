@@ -1,6 +1,0 @@
-POST {{host}}/sessions/{{sessionId2}}/reservations
-Content-Type: application/json
-
-{
-    "ParticipantId": "{{participantId}}"
-}

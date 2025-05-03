@@ -1,6 +1,0 @@
-@DomeGym.Api_HostAddress = http://localhost:5057
-
-GET {{DomeGym.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
